@@ -32,13 +32,13 @@ const clearPage = () => {
 
 const imagesQuantity = (items) => {
     if (items > 0) {
-        Notify.success(`Hooray! We found ${items} images.`);
+        Notiflix.Notify.success(`Hooray! We found ${items} images.`);
     }
 }
 
 const searchError = () => {
     imagesApi.resetPage();
-    Notify.failure(
+    Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.',
     );
     clearPage();
@@ -46,7 +46,7 @@ const searchError = () => {
 }
 
 const endError = () => {
-    Notify.info("We're sorry, but you've reached the end of search results.");
+    Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
  }
 
 const submitSearch = (event) => {
@@ -86,3 +86,5 @@ const submitSearch = (event) => {
         searchError();
     }
 }
+
+searchForm.addEventListener('submit', submitSearch);
