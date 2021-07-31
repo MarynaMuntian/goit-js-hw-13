@@ -1,1 +1,88 @@
-@import './common';
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+p {
+  font-size: inherit;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  padding: 0;
+}
+
+body {
+  font-family: 'Palette Mosaic', cursive;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #424242;
+  padding: 30px 15px;
+  position: relative;
+  text-align: center;
+}
+
+.load-more {
+  display: none;
+  color: #fff;
+  background-color: #3871c7;
+  padding: 5px 15px;
+  border-radius: 3px;
+  min-width: 300px;
+}
+
+.visible {
+  display: inline-block;
+}
+
+// Стили формы
+
+.form-wrapper {
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #972ac2;
+  padding: 10px 5px;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+input {
+  padding: 5px 10px;
+  min-width: 300px;
+}
+
+.search-form button {
+  padding: 5px 15px;
+}
+
+// Стили галереи
+
+.gallery {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 15px 5px;
+  border: 1px solid rgba(32, 28, 28, 0.541);
+  border-radius: 5px;
+}
