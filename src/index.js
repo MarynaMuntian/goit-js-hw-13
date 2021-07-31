@@ -4,8 +4,6 @@ import GetImagesAPI from './js/fetchImages';
 import imgTemplate from './templates/img.hbs';
 
 const searchForm = document.querySelector('.search-form');
-const searchInput = document.querySelector('input[type=text]');
-const submitBtn = document.querySelector('button[type=submit]');
 const galleryContainer = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');
 
@@ -52,10 +50,9 @@ const endError = () => {
 const submitSearch = (event) => {
     event.preventDefault();
     clearPage();
-    // hideLoadMoreBtn();
 
     const input = event.currentTarget;
-    imagesApi.query = input.elements.searchQuery.value.trim();
+    imagesApi.searchQuery = input.elements.searchQuery.value.trim();
     imagesApi.resetPage();
 
     if (imagesApi.searchQuery !== '') {
@@ -87,4 +84,15 @@ const submitSearch = (event) => {
     }
 }
 
+const loadMoreImg = () => {
+    imagesApi.fetchImages().then(images => {
+        if (images.hits.length < imagesApi.itemsPerPage) {
+           endError();
+            hideLoadMoreBtn();
+        }
+        renderPage(images);
+    });
+}
+
 searchForm.addEventListener('submit', submitSearch);
+loadMoreBtn.addEventListener('click', loadMoreImg);
