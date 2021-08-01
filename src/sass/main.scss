@@ -34,11 +34,10 @@ body {
 
 .load-more {
   display: none;
-  color: #fff;
-  background-color: #3871c7;
+  background-color: #972ac2;
   padding: 5px 15px;
   border-radius: 3px;
-  min-width: 300px;
+  min-width: 200px;
 }
 
 .visible {
@@ -85,4 +84,23 @@ input {
   margin: 15px 5px;
   border: 1px solid rgba(32, 28, 28, 0.541);
   border-radius: 5px;
+}
+
+.photo-card img {
+  height: 80%;
+  object-fit: cover;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+.info {
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.info-item {
+  font-weight: 300;
+  padding: 5px;
+  text-align: center;
 }
