@@ -47,6 +47,9 @@ const endError = () => {
     Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
  }
 
+let numberНits = 0;
+let totalHits = 0;
+
 const submitSearch = (event) => {
     event.preventDefault();
     clearPage();
@@ -60,6 +63,8 @@ const submitSearch = (event) => {
             try {
                 const images = await imagesApi.fetchImages();
                 imagesQuantity(images.totalHits);
+                numberНits = images.hits.length;
+                totalHits = images.totalHits;
                 if (images.totalHits < 1) {
                     searchError();
                     return;
@@ -86,7 +91,8 @@ const submitSearch = (event) => {
 
 const loadMoreImg = () => {
     imagesApi.fetchImages().then(images => {
-        if (images.hits.length < imagesApi.itemsPerPage) {
+        numberНits += images.hits.length;
+        if (numberНits > totalHits) {
            endError();
             hideLoadMoreBtn();
         }
