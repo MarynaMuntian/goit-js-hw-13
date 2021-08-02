@@ -57,7 +57,6 @@ const submitSearch = (event) => {
     const input = event.currentTarget;
     imagesApi.searchQuery = input.elements.searchQuery.value.trim();
     imagesApi.resetPage();
-
     if (imagesApi.searchQuery !== '') {
         const request = async () => {
             try {
