@@ -17,7 +17,7 @@ export default class GetImagesAPI {
             .get(url)
             .then(response => {
                 this.updatePage();
-                console.log(response.data.totalHits);
+                // console.log(response.data.totalHits);
                 return response.data;
             })
             .catch(error => console.log(error));

@@ -23,7 +23,7 @@ button {
 }
 
 body {
-  font-family: 'Palette Mosaic', cursive;
+  font-family: 'Indie Flower', cursive;
   line-height: 1.5;
   background-color: #fff;
   color: #424242;
@@ -82,6 +82,8 @@ input {
   flex-direction: column;
   justify-content: space-between;
   margin: 15px 5px;
+  width: 350px;
+  height: 280px;
   border: 1px solid rgba(32, 28, 28, 0.541);
   border-radius: 5px;
 }
